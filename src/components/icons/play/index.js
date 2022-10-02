@@ -1,0 +1,6 @@
+export {default as Loop} from './Loop'
+export {default as Loop1} from './Loop1'
+export {default as Next} from './Next'
+export {default as Pause} from './Pause'
+export {default as Play} from './Play'
+export {default as Prev} from './Prev'
