@@ -1,8 +1,7 @@
-import { memo } from 'react'
 import {MenuItems} from '../../data/NavItems'
 import {NavLink,Link} from 'react-router-dom'
 
-function Navbar() {
+export default function Navbar() {
   const linkActive = ({isActive}) => ({
     color : isActive ? 'white' : ''
   })
@@ -37,7 +36,7 @@ function Navbar() {
           <i className="fa-solid fa-heart-circle-plus mr-4 text-[20px] h-[20px] w-[20px]"></i>Bài hát yêu thích</NavLink>
         </li>
         <li className="text-[16px] pt-4 text-text1 hover:text-textwhite duration-200 font-bold cursor-pointer">
-        <a href="https://github.com/ndvanh/React-MusicPlayer" className="block w-full" target="_blank" rel="noopener noreferrer"> 
+        <a href="https://github.com/ndvanh/MusicPlayer-ReactJs-SpotifyClone" className="block w-full" target="_blank" rel="noopener noreferrer"> 
         <i className="fa-regular fa-circle-down mr-4"></i> Cài đặt ứng dụng</a>
         </li>
       </ul>
@@ -56,4 +55,4 @@ function Navbar() {
     </nav>
   )
 }
-export default memo(Navbar)
+

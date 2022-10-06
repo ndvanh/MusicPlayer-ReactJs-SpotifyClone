@@ -1,7 +1,9 @@
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import Music from '../data/songs.json'
+import {LoginCon} from '../context/LoginContext/LoginContext'
 
 export default function useAddSongs() {
+   const {userLogin,toggleLoginForm} = useContext(LoginCon)
     const [favSong,setFavSong] = useState(()=>{
       const savedSong = JSON.parse(localStorage.getItem('list_fav_songs'))
       return savedSong || []
@@ -11,7 +13,8 @@ export default function useAddSongs() {
       return savedId || []
     }) 
     const handleAddFavSong = (songid) => {
-      const thisSong = Music.find(song => song.id === songid)
+      if(userLogin){
+        const thisSong = Music.find(song => song.id === songid)
       setFavSong(prev => {
        if(favSong.some(song => song.id === thisSong.id)){
         const localFavSong =  [...prev].filter(songItem => songItem.id !== thisSong.id)
@@ -34,6 +37,10 @@ export default function useAddSongs() {
           return [...prev,songid]
         } 
       })
+      }
+      else {
+          toggleLoginForm()
     }
+      }
   return [favSong,handleAddFavSong,isChecked]
 }
