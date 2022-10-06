@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import { useLogin } from '../../hooks/index'
 import {LoginCon} from './LoginContext'
 
@@ -6,14 +7,17 @@ export default function LoginProvider({children}) {
   const toggleLoginForm = () => {
     setShowFormLogin(!showFormLogin)
   }
+  const loginValue = useMemo(()=>{
+    return {
+      showFormLogin,
+      setShowFormLogin,
+      userLogin,
+      toggleLoginForm
+    }
+  },[showFormLogin, userLogin])
   return (
     <LoginCon.Provider 
-    value={{
-            showFormLogin:showFormLogin,
-            setShowFormLogin:setShowFormLogin,
-            userLogin:userLogin,
-            toggleLoginForm:toggleLoginForm
-      }}>
+    value={loginValue}>
       {children}
     </LoginCon.Provider>
   )

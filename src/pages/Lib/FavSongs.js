@@ -24,8 +24,8 @@ export default function FavSongs() {
         </div> : 
         <div className="text-text1">
           <SongTable dataSong = {favSong} />
-          <div className="absolute top-[-50px] right-[80px] cursor-pointer" onClick={handleRemoveFavSong}>
-            <span className="text-textwhite">Xóa tất cả</span>
+          <div className="absolute top-[-50px] right-[80px] sm:right-[10px] sm:top-[-45px] cursor-pointer" onClick={handleRemoveFavSong}>
+            <span className="text-textwhite sm:text-[12px]">Xóa tất cả</span>
             </div>
         </div>}
     </div>

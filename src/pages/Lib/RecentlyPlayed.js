@@ -21,8 +21,8 @@ export default function RecentlyPlayed() {
       <SongTable dataSong = {recSong} />
      </div>
       <div className="text-text1">
-      <div className="absolute top-[-50px] right-[80px] cursor-pointer" onClick={handleRemoveRecPlayed}>
-        <span className="text-textwhite">Xóa tất cả</span>
+      <div className="absolute top-[-50px] right-[80px] sm:right-[10px] sm:top-[-45px] cursor-pointer" onClick={handleRemoveRecPlayed}>
+        <span className="text-textwhite sm:text-[12px]">Xóa tất cả</span>
         </div>
     </div>
      </div>
